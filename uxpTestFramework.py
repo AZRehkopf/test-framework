@@ -180,9 +180,8 @@ def openApplicationProfiles():
 ####################################
 
 def startSession(element):
-	wait = WebDriverWait(driver, 10)
-	element = wait.until(EC.element_to_be_clickable((By.ID, element))).click()
-	sleep(1)	
+	element.click()
+	sleep(1)
 
 def endSession():
 	wait = WebDriverWait(driver, 10)
@@ -202,6 +201,14 @@ def toggleFavourite(element):
 	action.move_to_element_with_offset(elem, 0,0).perform()
 	action.click().perform()
 
+def getFavourites():
+	favs = driver.find_elements_by_xpath("//div[@class='fav-div']")
+	return favs
+
+def getGroups():
+	groups = driver.find_elements_by_xpath("//div[@class='group-div']")
+	return groups
+
 def removeFavourite(element):
 	wait = WebDriverWait(driver, 10)
 	element = wait.until(EC.element_to_be_clickable((By.ID, element)))
@@ -218,6 +225,14 @@ def addToGroup(elem, grp):
 	group =  wait.until(EC.element_to_be_clickable((By.ID, grp)))
 	action = ActionChains(driver)
 	action.drag_and_drop(element, group).perform()
+
+def removeFromGroup(element):
+	elem = "group" + element[10:]
+	xarg = "//div[@id='" + element + "']/div[@id='" + elem + "']/*"
+	members = driver.find_elements_by_xpath(xarg)
+	action = ActionChains(driver)
+	action.drag_and_drop_by_offset(members[0],0,100).perform()
+	sleep(1)
 
 def openSearch():
 	wait = WebDriverWait(driver, 10)
@@ -240,8 +255,16 @@ def search(query):
 		sleep(0.2)
 		elem.send_keys(i)
 
+def getSearchResults():
+	results = driver.find_elements_by_xpath("//div[@class='search-fav-div']")
+	return results
+
+def getGroupResults():
+	results = driver.find_elements_by_xpath("//div[@class='group-div-search']")
+	return results
+
 ####################################
-#           Room Control           #
+#   Room Control/Profile Sources   #
 ####################################
 
 def openRoomControl():
@@ -262,6 +285,22 @@ def toggleSwapDisplay():
 def openCameraControls(element):
 	wait = WebDriverWait(driver, 10)
 	element = wait.until(EC.element_to_be_clickable((By.ID, element))).click()
+	sleep(1)
+
+def getSendSources():
+	large = driver.find_elements_by_xpath("//div[@class='profile-send-div']")
+	small = driver.find_elements_by_xpath("//div[@class='profile-send-div4']")
+	sources = large + small
+	return sources
+
+def getReceiveSources():
+	large = driver.find_elements_by_xpath("//div[@class='profile-receive-div']")
+	small = driver.find_elements_by_xpath("//div[@class='profile-receive-div4']")
+	sources = large + small
+	return sources
+
+def toggleMute(element):
+	element.click()
 	sleep(1)
 
 ####################################
@@ -424,8 +463,6 @@ def main():
 	connect("172.17.137.23")
 	login()
 	sleep(2)
-	startSession("group-div-1")
-	sleep(4)
 	endTest()
 
 if __name__ == "__main__":

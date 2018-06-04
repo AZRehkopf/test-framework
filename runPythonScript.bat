@@ -1,1 +1,0 @@
-C:/Users/arehkopf/Documents/python36-32/python.exe C:/Users/arehkopf/Documents/py/uxpTestFramework.py
