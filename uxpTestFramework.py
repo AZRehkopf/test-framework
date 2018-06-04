@@ -24,6 +24,12 @@ def login():
 	elem.send_keys("PV1admin")
 	elem.send_keys(Keys.RETURN)
 
+def startTest():
+	global driver 
+	driver = webdriver.Chrome()
+	driver.maximize_window()
+	return driver
+
 def endTest():
 	driver.close()
 
@@ -195,15 +201,23 @@ def createGroup():
 	sleep(1)
 
 def toggleFavourite(element):
-	wait = WebDriverWait(driver, 10)
-	elem = wait.until(EC.element_to_be_clickable((By.ID, element)))
 	action = ActionChains(driver)
-	action.move_to_element_with_offset(elem, 0,0).perform()
-	action.click().perform()
+	action.move_to_element(element)
+	action.click()
+	action.perform()
+	sleep(1)
 
 def getFavourites():
 	favs = driver.find_elements_by_xpath("//div[@class='fav-div']")
 	return favs
+
+def getFavouriteAddToggles():
+	toggles = driver.find_elements_by_xpath("//img[@class='search-add-fav-btn']")
+	return toggles
+
+def getFavouriteRemoveToggles():
+	toggles = driver.find_elements_by_xpath("//img[@class='search-remove-fav-btn']")
+	return toggles
 
 def getGroups():
 	groups = driver.find_elements_by_xpath("//div[@class='group-div']")
@@ -460,11 +474,12 @@ def closeCameraControl():
 ####################################
 
 def main():
+	startTest()
 	connect("172.17.137.23")
 	login()
+
 	sleep(2)
 	endTest()
 
 if __name__ == "__main__":
-	driver = webdriver.Chrome()
 	main()

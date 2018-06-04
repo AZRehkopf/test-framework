@@ -1,0 +1,7 @@
+##################################### Test Begin #####################################
+
+Regression beginning at 2018-06-04 16:34:00
+[16:34:01]: Login Test at 172.17.137.23 ... OK
+[16:34:05]: 6 of 6 devices detected in endpoint directory ... OK
+[16:34:10]: Add favourites test ... OK
+[16:34:21]: Remove favourites test ... OK
