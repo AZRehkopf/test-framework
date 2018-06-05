@@ -1,138 +1,198 @@
-import sys, datetime
-sys.path.append('C:\\Users\\arehkopf\\Documents\\GitHub\\test-framework')
+import sys, datetime, os
+dir_path = os.path.dirname(os.path.realpath(__file__))
+sys.path.append(dir_path)
 from selenium import webdriver
 from time import sleep
 import uxpTestFramework as uxp
-import unittest
 
-def startLogging():
+ip_addresses = ["172.17.136.62","172.17.136.82","172.17.136.79","172.17.136.72", "172.17.136.73", "172.17.137.23", "172.17.137.25"]
+
+def start_logging():
+	global driver
+	driver = uxp.startTest()
 	start = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-	with open("log.txt", "w") as log:
+	with open("reg_log.txt", "w") as log:
 		log.write("##################################### Test Begin #####################################\n\n")
-		log.write("Regression beginning at " + start + "\n")
+		log.write("Regression beginning at " + start + "\n\n")
 
-def loginTest(ip):
-	uxp.connect(ip)
-	
-	time = datetime.datetime.now().strftime("[%H:%M:%S]: Login Test at ")
-	time = time + ip + " ... "
-	
-	with open("log.txt", "a") as log:
-		log.write(time)
+def stop_logging():
+	end = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+	with open("reg_log.txt", "a") as log:
+		log.write("\nRegression ended at " + end + "\n\n")
+		log.write("#####################################  Test End  #####################################\n\n")
+	uxp.endTest()	
+
+def log(name, result):
+	time = datetime.datetime.now().strftime("[%H:%M:%S]: ")
+	message = time + "Running " + name + " ... "
+	with open("reg_log.txt", "a") as log:
+		log.write(message)
+		if result:
+			log.write("OK\n")
+		else:
+			log.write("FAIL\n")
+
+def connection_test(ip_adrs):
+	result = True
+	for ip in ip_adrs:
+		uxp.connect(ip)
 		try:
 			assert "Evertz" in driver.title
-			log.write("OK\n")
 		except AssertionError:
-			log.write("FAIL\n")
+			result = False
+		sleep(0.5)
+	log(connection_test.__name__, result)
 	
+def login_test(ip):
+	result = True
+	uxp.connect(ip)
+	try:
+		assert "Evertz" in driver.title		
+	except AssertionError:
+		result = False
 	uxp.login()
+	log(login_test.__name__, result)
 
-def endPointDirectoryTest():
+def endpoint_directory_test():
+	result = True
 	uxp.openSearch()
 	devices = uxp.getSearchResults()
-	time = datetime.datetime.now().strftime("[%H:%M:%S]: " + str(len(devices)) + " of 6 devices detected in endpoint directory ... ")
-
-	with open("log.txt", "a") as log:
-		log.write(time)
-		try:
-			assert len(devices) is 6
-			log.write("OK\n")
-		except AssertionError:
-			log.write("FAIL\n")
+	try:
+		assert len(devices) is 6
+	except AssertionError:
+		result = False
 	uxp.closeSearch()
+	log(endpoint_directory_test.__name__, result)
 
 ### Add logic to check if favs are already added
-def addRemoveFavouritesTest():
+def add_favourites_test():
+	result = True
 	uxp.openSearch()
 	search = uxp.getFavouriteAddToggles()
-	for s in search:
-		uxp.toggleFavourite(s)
-		sleep(0.1)
-	uxp.closeSearch()
+	uxp.toggleAllFavourites(search)
 	favs = uxp.getFavourites()
-	time = datetime.datetime.now().strftime("[%H:%M:%S]: Add favourites test ... ")
+	try:
+		assert len(favs) is 6
+	except AssertionError:
+		result = False
+	log(add_favourites_test.__name__, result)
 
-	with open("log.txt", "a") as log:
-		log.write(time)
-		try:
-			assert len(favs) is 6
-			log.write("OK\n")
-		except AssertionError:
-			log.write("FAIL\n")
-
+### Add logic to check if favs are already added
+def remove_favourites_test():
+	result = True
 	uxp.openSearch()
 	search = uxp.getFavouriteRemoveToggles()
-	for s in search:
-		uxp.toggleFavourite(s)
-		sleep(0.1)
-	uxp.closeSearch()
+	uxp.toggleAllFavourites(search)
 	favs = uxp.getFavourites()
-	time = datetime.datetime.now().strftime("[%H:%M:%S]: Remove favourites test ... ")
+	try:
+		assert len(favs) is 0
+	except AssertionError:
+		result = False
+	log(remove_favourites_test.__name__, result)
 
-	with open("log.txt", "a") as log:
-		log.write(time)
-		try:
-			assert len(favs) is 0
-			log.write("OK\n")
-		except AssertionError:
-			log.write("FAIL\n")
-
-#Add assertions
-def initiateSessionTest():
+### Add assertions
+def initiate_session_test_auto_anwser_on():
 	uxp.openSearch()
 	search = uxp.getFavouriteAddToggles()
-	for s in search:
-		uxp.toggleFavourite(s)
-		sleep(0.1)
-	uxp.closeSearch()
-
+	uxp.toggleAllFavourites(search)	
+	
 	favs = uxp.getFavourites()
 	for f in favs:
 		uxp.startSession(f)
-		sleep(2)
+		sleep(5)
 		uxp.endSession()
-	time = datetime.datetime.now().strftime("[%H:%M:%S]: Initiate session test with auto answer off ... OK")
+	log(initiate_session_test_auto_anwser_on.__name__, True)	
+
+### Decide on logic for this fucntion
+# def initiate_session_test_auto_anwser_off(client, ip_adrs):
+
+def change_profiles_while_idle_test():
+	result = True
+	profiles = uxp.getProfiles()
+	for p in profiles:
+		uxp.changeProfile(p,5)
+	try:
+		assert len(profiles) is not 0
+	except AssertionError:
+		result = False
+	log(change_profiles_while_idle_test.__name__, True)
+
+def change_profiles_while_in_session_test():
+	result = True
+	uxp.startSessionByNum(0)
+
+	profiles = uxp.getProfiles()
+	for p in profiles:
+		uxp.changeProfile(p,5)
+	try:
+		assert len(profiles) is not 0
+	except AssertionError:
+		result = False
+	uxp.endSession()
+	log(change_profiles_while_in_session_test.__name__, True)
+
+def device_picture_test():
+	uxp.openPictureDialogue()
+	uxp.selectPicture(os.path.join(dir_path,"night.png"))
+	uxp.confirmPictureChange()
+	log(device_picture_test.__name__, True)
+	sleep(5)
+
+def mute_test():
+	uxp.startSessionByNum(0)
+	sources = uxp.getAllSources()
+	for s in sources:
+		uxp.toggleMute(s)
+	sleep(5)
+	for s in sources:
+		uxp.toggleMute(s)
+	uxp.endSession()
+	log(mute_test.__name__, True)
+
+def reboot_test():
+	result = True
+	uxp.openDeviceStatus()
+	uxp.reboot()
+	uxp.confirmReboot()
+	sleep(80)
+	uxp.login()
+	try:
+		assert "Your device is currently unavailable" not in driver.page_source
+	except AssertionError:
+		result = False
+	log(reboot_test.__name__, result)
+
+def profile_reload_test():
+	result = True
+	before = uxp.getActiveProfile()
+	driver.refresh()
+	sleep(3)
+	after = uxp.getActiveProfile()
+	try:
+		assert (before == after) is True
+	except AssertionError:
+		result = False
+	log(profile_reload_test.__name__, result)
 
 ####################################
 #               Main               #
 ####################################
 
 def main():
-	startLogging()
-	loginTest("172.17.137.23")
-	sleep(2)
-	endPointDirectoryTest()
-	addRemoveFavouritesTest()
-	initiateSessionTest()
-	uxp.endTest()
+	start_logging()
+	#connection_test(ip_addresses)
+	login_test("172.17.137.23")
+	#endpoint_directory_test()
+	#add_favourites_test()
+	#remove_favourites_test()
+	#initiate_session_test_auto_anwser_on()
+	#change_profiles_while_idle_test()
+	#change_profiles_while_in_session_test()
+	#device_picture_test()
+	#mute_test()
+	#reboot_test()
+	profile_reload_test()
+	stop_logging()
 
-if __name__ == "__main__":
-	driver = uxp.startTest()
+if __name__ == "__main__":	
 	main()
-
-'''
-	openRoomControl()
-	time.sleep(1)
-
-	openCameraControls("local-camera0")
-	time.sleep(1)
-
-	selectPreset(1)
-	time.sleep(1)
-	
-	moveCameraRight(1)
-	moveCameraLeft(1)
-	moveCameraUp(1)
-	moveCameraDown(1)
-	
-	time.sleep(1)
-	closeCameraControl()
-
-	openPictureDialogue()
-	sleep(1)
-	selectPicture('C:\\Users\\arehkopf\\Desktop\\rkt.png')
-	sleep(1)
-	confirmPictureChange()
-	sleep(5)
-
-'''

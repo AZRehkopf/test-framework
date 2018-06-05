@@ -23,6 +23,7 @@ def login():
 	elem.clear()
 	elem.send_keys("PV1admin")
 	elem.send_keys(Keys.RETURN)
+	sleep(2)
 
 def startTest():
 	global driver 
@@ -158,6 +159,7 @@ def cancelPictureChange():
 	sleep(1)
 
 def confirmPictureChange():
+	sleep(5)
 	wait = WebDriverWait(driver, 10)
 	element = wait.until(EC.element_to_be_clickable((By.CLASS_NAME, "btn-device-image-replace"))).click()
 	sleep(1)	
@@ -167,9 +169,16 @@ def confirmPictureChange():
 ####################################
 
 def changeProfile(element, delay):
-	wait = WebDriverWait(driver, 10)
-	element = wait.until(EC.element_to_be_clickable((By.ID, element))).click()
+	element.click()
 	sleep(delay)
+
+def getProfiles():
+	prof = driver.find_elements_by_xpath("//img[@class='profile-border']")
+	return prof
+
+def getActiveProfile():
+	prof = driver.find_element_by_xpath("//img[@class='profile-border-active']/../../div[2]")
+	return prof.text
 
 def openGenericProfiles():
 	wait = WebDriverWait(driver, 10)
@@ -189,6 +198,10 @@ def startSession(element):
 	element.click()
 	sleep(1)
 
+def startSessionByNum(num):
+	favs = getFavourites()
+	startSession(favs[num])
+
 def endSession():
 	wait = WebDriverWait(driver, 10)
 	element =  wait.until(EC.element_to_be_clickable((By.CLASS_NAME, "close-btn"))).click()
@@ -205,7 +218,12 @@ def toggleFavourite(element):
 	action.move_to_element(element)
 	action.click()
 	action.perform()
-	sleep(1)
+
+def toggleAllFavourites(elements):
+	for elem in elements:
+		toggleFavourite(elem)
+		sleep(0.2)
+	closeSearch()
 
 def getFavourites():
 	favs = driver.find_elements_by_xpath("//div[@class='fav-div']")
@@ -313,9 +331,15 @@ def getReceiveSources():
 	sources = large + small
 	return sources
 
+def getAllSources():
+	send = getSendSources()
+	receive = getReceiveSources()
+	sources = send + receive
+	return sources
+
 def toggleMute(element):
 	element.click()
-	sleep(1)
+	sleep(0.2)
 
 ####################################
 #         Camera  Control          #
@@ -468,18 +492,3 @@ def closeCameraControl():
 	wait = WebDriverWait(driver, 10)
 	element = wait.until(EC.element_to_be_clickable((By.CLASS_NAME, "local-remote-dialog-close"))).click()
 	sleep(1)
-
-####################################
-#               Main               #
-####################################
-
-def main():
-	startTest()
-	connect("172.17.137.23")
-	login()
-
-	sleep(2)
-	endTest()
-
-if __name__ == "__main__":
-	main()
