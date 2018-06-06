@@ -1,10 +1,10 @@
+##################################### Test Begin #####################################
 
-Test ended at 2018-06-05 16:08:03
+Regression beginning at 2018-06-06 16:14:29
 
-Test ended at 2018-06-05 16:10:13
+[16:14:45]: Running connection_test ... OK
 
-Test ended at 2018-06-05 16:11:15
-Total conenctions: 1
+Regression ended at 2018-06-06 16:14:45
 
 #####################################  Test End  #####################################
 

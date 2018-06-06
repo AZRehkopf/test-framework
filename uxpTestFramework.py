@@ -241,6 +241,17 @@ def getGroups():
 	groups = driver.find_elements_by_xpath("//div[@class='group-div']")
 	return groups
 
+def getBLFStatus(num):
+	xpath = "//img[@id='favimg" + str(num) + "']"
+	favs = driver.find_element_by_xpath(xpath)
+	css = favs.value_of_css_property("border")
+	if "(63, 255, 63)" in css:
+		return "green"
+	elif "(255, 0, 0)" in css:
+		return "red"
+	else:
+		return "error"
+
 def removeFavourite(element):
 	wait = WebDriverWait(driver, 10)
 	element = wait.until(EC.element_to_be_clickable((By.ID, element)))

@@ -1,11 +1,10 @@
-import sys, datetime, os
+import sys, datetime, os, webbrowser
 dir_path = os.path.dirname(os.path.realpath(__file__))
 sys.path.append(dir_path)
 from selenium import webdriver
 from time import sleep
 import uxpTestFramework as uxp
-
-ip_addresses = ["172.17.136.62","172.17.136.82","172.17.136.79","172.17.136.72", "172.17.136.73", "172.17.137.23", "172.17.137.25"]
+import smTestFramework as sm
 
 def start_logging():
 	global driver
@@ -20,7 +19,8 @@ def stop_logging():
 	with open("reg_log.txt", "a") as log:
 		log.write("\nRegression ended at " + end + "\n\n")
 		log.write("#####################################  Test End  #####################################\n\n")
-	uxp.endTest()	
+	uxp.endTest()
+	webbrowser.open("reg_log.txt")	
 
 def log(name, result):
 	time = datetime.datetime.now().strftime("[%H:%M:%S]: ")
@@ -32,8 +32,9 @@ def log(name, result):
 		else:
 			log.write("FAIL\n")
 
-def connection_test(ip_adrs):
+def connection_test():
 	result = True
+	ip_adrs = sm.getAllRegisteredIPs()
 	for ip in ip_adrs:
 		uxp.connect(ip)
 		try:
@@ -154,13 +155,14 @@ def reboot_test():
 	uxp.openDeviceStatus()
 	uxp.reboot()
 	uxp.confirmReboot()
-	sleep(80)
+	sleep(120)
 	uxp.login()
 	try:
 		assert "Your device is currently unavailable" not in driver.page_source
 	except AssertionError:
 		result = False
 	log(reboot_test.__name__, result)
+	sleep(10)
 
 def profile_reload_test():
 	result = True
@@ -174,14 +176,28 @@ def profile_reload_test():
 		result = False
 	log(profile_reload_test.__name__, result)
 
+def profile_category_test():
+	result = True
+	uxp.openGenericProfiles()
+	try:
+		assert "2 Tx" in driver.page_source
+	except AssertionError:
+		result = False
+	uxp.openApplicationProfiles()
+	try:
+		assert "Huddle Audience - Single Fiber" in driver.page_source
+	except AssertionError:
+		result = False
+	log(profile_category_test.__name__, result)
+
 ####################################
 #               Main               #
 ####################################
 
 def main():
 	start_logging()
-	#connection_test(ip_addresses)
-	login_test("172.17.137.23")
+	connection_test()
+	#login_test("172.17.137.23")
 	#endpoint_directory_test()
 	#add_favourites_test()
 	#remove_favourites_test()
@@ -191,7 +207,8 @@ def main():
 	#device_picture_test()
 	#mute_test()
 	#reboot_test()
-	profile_reload_test()
+	#profile_reload_test()
+	#profile_category_test()
 	stop_logging()
 
 if __name__ == "__main__":	
