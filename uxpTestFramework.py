@@ -13,6 +13,7 @@ from time import sleep
 
 def connect(ip):
 	driver.get("http://" + ip)
+	sleep(1)
 	
 def login():
 	elem = driver.find_element_by_name("user")
@@ -114,6 +115,11 @@ def openAdvanced():
 	element = wait.until(EC.element_to_be_clickable((By.ID, "advanced"))).click()
 	sleep(1)
 
+def weLogout():
+	wait = WebDriverWait(driver, 10)
+	element = wait.until(EC.element_to_be_clickable((By.ID, "notification-login-container"))).click()
+	sleep(1)
+
 ### Update Profile ###
 
 def updateProfile():
@@ -196,9 +202,10 @@ def openApplicationProfiles():
 
 def startSession(element):
 	element.click()
-	sleep(1)
+	sleep(0.5)
 
 def startSessionByNum(num):
+	sleep(1)
 	favs = getFavourites()
 	startSession(favs[num])
 
@@ -208,9 +215,24 @@ def endSession():
 	element =  wait.until(EC.element_to_be_clickable((By.CLASS_NAME, "btn-ok"))).click()
 	sleep(1)
 
+def acceptSession():
+	wait = WebDriverWait(driver, 10)
+	element = wait.until(EC.element_to_be_clickable((By.CLASS_NAME, "session-accept"))).click()
+	sleep(1)
+
+def rejectSession():
+	wait = WebDriverWait(driver, 10)
+	element = wait.until(EC.element_to_be_clickable((By.CLASS_NAME, "session-reject"))).click()
+	sleep(1)
+
 def createGroup():
 	wait = WebDriverWait(driver, 10)
 	element = wait.until(EC.element_to_be_clickable((By.ID, "createGroup"))).click()
+	sleep(1)
+
+def createSearchGroup():
+	wait = WebDriverWait(driver, 10)
+	element = wait.until(EC.element_to_be_clickable((By.ID, "createGroupSearch"))).click()
 	sleep(1)
 
 def toggleFavourite(element):
@@ -228,6 +250,17 @@ def toggleAllFavourites(elements):
 def getFavourites():
 	favs = driver.find_elements_by_xpath("//div[@class='fav-div']")
 	return favs
+
+def getFavouriteNames():
+	favs = driver.find_elements_by_xpath("//div[@class='fav-icon-text']")
+	names = []
+	for f in favs:
+		names.append(f.text)
+	return names
+
+def getCurrentDeviceName():
+	name = driver.find_element_by_xpath("//div[@class='header-title']")
+	return name.text
 
 def getFavouriteAddToggles():
 	toggles = driver.find_elements_by_xpath("//img[@class='search-add-fav-btn']")
@@ -260,11 +293,17 @@ def removeFavourite(element):
 	
 	element = wait.until(EC.element_to_be_clickable((By.CLASS_NAME, "hover-fav-delete"))).click()
 	element = wait.until(EC.element_to_be_clickable((By.CLASS_NAME, "hover-fav-delete-btn"))).click()
-	sleep(1)
+	sleep(5)
 
-def addToGroup(elem, grp):
+def removeGroup(element):
 	wait = WebDriverWait(driver, 10)
-	element = wait.until(EC.element_to_be_clickable((By.ID, elem)))
+	element = wait.until(EC.element_to_be_clickable((By.ID, element)))
+	action = ActionChains(driver)
+	action.move_to_element(element).perform()
+	element = wait.until(EC.element_to_be_clickable((By.CLASS_NAME, "hover-group-fav-delete"))).click()
+
+def addToGroup(element, grp):
+	wait = WebDriverWait(driver, 10)
 	group =  wait.until(EC.element_to_be_clickable((By.ID, grp)))
 	action = ActionChains(driver)
 	action.drag_and_drop(element, group).perform()

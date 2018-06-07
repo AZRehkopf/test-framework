@@ -1,10 +1,31 @@
 ##################################### Test Begin #####################################
 
-Regression beginning at 2018-06-06 16:14:29
+Regression beginning at 2018-06-07 16:38:42
 
-[16:14:45]: Running connection_test ... OK
+[16:39:05]: Running connection_test ... OK
+[16:39:08]: Running login_test ... OK
+[16:39:12]: Running endpoint_directory_test ... OK
+[16:39:15]: Running add_favourites_test ... OK
+[16:39:20]: Running remove_favourites_test ... OK
+[16:39:48]: Running initiate_session_test_auto_anwser_on ... OK
+[16:40:16]: Running initiate_session_test_auto_anwser_off ... OK
+[16:40:45]: Running reject_session_test ... OK
+[16:41:00]: Running change_profiles_while_idle_test ... OK
+[16:41:18]: Running change_profiles_while_in_session_test ... OK
+[16:41:32]: Running device_picture_test ... OK
+[16:41:50]: Running mute_test ... OK
+[16:43:59]: Running reboot_test ... OK
+[16:46:24]: Running sm_reboot_test ... OK
+[16:46:40]: Running we_logout_test ... OK
+[16:46:55]: Running profile_reload_test ... OK
+[16:46:58]: Running profile_category_test ... OK
+[16:47:02]: Running create_group_test ... OK
+[16:47:05]: Running add_fav_to_group_test ... OK
+[16:47:06]: Running remove_group_test ... OK
+[16:47:11]: Running add_temp_fav_to_group_test ... OK
+[16:47:19]: Running remove_fav_from_group ... OK
 
-Regression ended at 2018-06-06 16:14:45
+Regression ended at 2018-06-07 16:47:19
 
 #####################################  Test End  #####################################
 

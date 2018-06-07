@@ -58,24 +58,34 @@ def createDeviceDatabase():
 	for dev in range(num_of_devices):
 		devices.append(device(text[(dev*11)+1],text[(dev*11)+2],text[(dev*11)+3],text[(dev*11)+4]))
 
-def findDevice(name):
+def findDevice(devices, name):
 	for index, item in enumerate(devices):
 		if item.name == name:
 			break
 	return index
 
-def getAllRegisteredIPs():
-	if len(devices) is 0:
-		startSession()
-		getVersionNumber()
-		clickMenuButton("Devices")
-		createDeviceDatabase()
-		endSession()
+def getDeviceDatabase():
+	startSession()
+	clickMenuButton("Devices")
+	createDeviceDatabase()
+	endSession()
+	return devices
+
+def getAllRegisteredIPs(devices):
 	ips = []
 	for d in devices:
 		ips.append(d.ip)
 	return(ips)
 
-#getAllRegisteredIPs()
-#print(devices[findDevice("TRS4K-2U")].ip)
-#endSession()
+def selectDevice(num):
+	checkbox = driver.find_element_by_xpath("//img[@id='chkBox" + str(num) + "']")
+	checkbox.click()
+
+def restartDevice(devices, name):
+	startSession()
+	clickMenuButton("Devices")
+	selectDevice(findDevice(devices, name))
+	wait = WebDriverWait(driver, 10)
+	element = wait.until(EC.element_to_be_clickable((By.ID, "rebootDevicesBtn"))).click()
+	element = wait.until(EC.element_to_be_clickable((By.ID, "restart-multiple-apply"))).click()
+	endSession()
