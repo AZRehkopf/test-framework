@@ -182,6 +182,17 @@ def getProfiles():
 	prof = driver.find_elements_by_xpath("//img[@class='profile-border']")
 	return prof
 
+def getProfileLabels():
+	profs = driver.find_elements_by_xpath("//img[@class='profile-border']/../../div[2]")
+	text = []
+	for p in profs:
+		text.append(p.text)
+	return text
+
+def getProfileIndex(label):
+	profs = getProfileLabels()
+	return profs.index(label)
+
 def getActiveProfile():
 	prof = driver.find_element_by_xpath("//img[@class='profile-border-active']/../../div[2]")
 	return prof.text
@@ -212,6 +223,12 @@ def startSessionByNum(num):
 def endSession():
 	wait = WebDriverWait(driver, 10)
 	element =  wait.until(EC.element_to_be_clickable((By.CLASS_NAME, "close-btn"))).click()
+	element =  wait.until(EC.element_to_be_clickable((By.CLASS_NAME, "btn-ok"))).click()
+	sleep(1)
+
+def endGroupSession():
+	wait = WebDriverWait(driver, 10)
+	element =  wait.until(EC.element_to_be_clickable((By.CLASS_NAME, "close-btn-group"))).click()
 	element =  wait.until(EC.element_to_be_clickable((By.CLASS_NAME, "btn-ok"))).click()
 	sleep(1)
 
@@ -341,6 +358,13 @@ def getSearchResults():
 	results = driver.find_elements_by_xpath("//div[@class='search-fav-div']")
 	return results
 
+def getSearchResultLabels():
+	results = driver.find_elements_by_xpath("//div[@class='search-icon-text']")
+	labels = []
+	for r in results:
+		labels.append(r.text)
+	return labels
+
 def getGroupResults():
 	results = driver.find_elements_by_xpath("//div[@class='group-div-search']")
 	return results
@@ -386,6 +410,30 @@ def getAllSources():
 	receive = getReceiveSources()
 	sources = send + receive
 	return sources
+
+def getSourceLabels():
+	prof = driver.find_elements_by_xpath("//div[@class='profile-send-icon-text']")
+	return prof
+
+def editLabel(element, text):
+	element.click()
+	element = driver.find_element_by_xpath("//input[@class='text-editor']")
+	element.send_keys(text)
+	element.send_keys(Keys.RETURN)
+
+def clearLabel(element):
+	element.click()
+	element = driver.find_element_by_xpath("//input[@class='text-editor']")
+	element.clear()
+	sleep(1)
+	element.send_keys(Keys.RETURN)
+
+def deleteLabelCharacters(element, num):
+	element.click()
+	element = driver.find_element_by_xpath("//input[@class='text-editor']")
+	for i in range(num):
+		element.send_keys(Keys.BACKSPACE)
+	element.send_keys(Keys.RETURN)
 
 def toggleMute(element):
 	element.click()

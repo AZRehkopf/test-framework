@@ -1,0 +1,109 @@
+1.1		Endpoint assigned DHCP IP
+1.2		Endpoint redirected by Option 66
+1.3		Endpoint picked up SW and Upgraded
+1.4		Endpoint picked up CFGs
+1.5		Endpoint shows green on Devices Tab
+1.6		Endpoint directory works
+1.7		Can Add Favorites
+1.8		Can Delete Favorites
+1.9		Can Initiate Sessions (Auto-Session: ON)
+1.10	Can Initiate Sessions (Auto-Session: OFF)
+1.11	Can Reject Incoming Sessions
+1.12	Can Terminate Sessions
+1.13	Session Timers Correct Between Browser Sessions
+1.14	Change Profiles When Idle
+1.15	Change Profiles When in a Session
+1.16	Device ID Works
+1.17	Mute/Unmute Works for All I/O
+1.18	HID Works
+1.19	Endpoint “reset” works and device re-attaches (shows green) on restart
+1.20	SM Endpoint “reset” works and device re-attaches on restart
+1.21	Can Navigate to WebEasy Page and Exit
+1.22	All Combinations of Devices (4K, 4K-2, 4K-2U) work and can interoperate
+1.23	Checksync Functionality
+1.24	Current active profile remains selected on  reloading/refreshing web UI
+1.25	Switching profiles and mute inconsistent
+1.26	Profile Categorization Toggle
+1.27	Auto-Resizing of Icons Based on Number of Profiles and Send/Receive Devices
+1.28	Functionality to Edit Send/Receive Labels
+1.29	Edit Label – Large Label Results in Hover Callout Obstructing Clickable Area for Edit
+1.30	Edit Label – Removing a Label Means You Can’t Edit Ever Again
+1.31	Edit Label – Multiple Spaces Aren’t Kept
+1.32	Only one profile each in generic/application profile types leads to shrinking of profile container
+1.33	Editing a Label Should Not Persist Profile Is Switched
+1.34	CFG is Not Saved/Updated on Adding New Favourites
+1.35	No X Displayed When Connecting
+1.36	Device on Reconnect Still has White Border Indicating That it is Offline
+1.37	Initiating a Session with a Temporary Favourite Reloads the Search Directory Every 10s
+1.38	Quick Double Click on Favourite Should Not Kill Session Control
+1.39	Updating BLF Status (in directory and otherwise)
+1.40	Device Suspended/No Service Status
+1.41	Remote Camera Control
+1.42	Device ID – Picture is Not Updated to Default Image on Re-adding Device
+1.43	Delete All Old Contacts and Reboot to Ensure There Are No Contacts
+1.44	Search Using All, Ensure All Configured from SM Are Shown
+1.45	Click +/- Multiple Times for Favourites in Search Directory
+1.46	Writing Letter by Letter Updates Search Results
+1.47	Callouts
+1.48	Calls Longer Than 7 Days
+1.49	Create/Delete Groups
+1.50	Add Favourites to Groups
+1.51	Add Temporary Favourites to Groups
+1.52	Remove Favourites from Groups
+1.53	Initiate a Group Session
+1.54	Clock Positioning During Group Session
+1.55	One User Rejecting Session Will Not End Entire Session	
+1.56	Users Can Individually Leave Session without Ending Entire Session
+1.57	Only the Group Session Initiator Can End the Session
+1.58	Switching Profiles During Group Session
+1.59	Camera Functions During Group Session
+1.60	Non-Core Breakpoints
+1.61	Group Session #/# Connected
+1.62	If Group Session is Active, User Should Be Able to Add a Contact to the Session
+1.63	Initiate Session That No One Answers
+1.64	Group Session Size of Icons
+1.65	Create a Group with More Than 10 Contacts
+1.66	Delete All Contacts from Group, Proper Callout Must Be Shown (Favourites)
+1.67	Delete All Contacts from Group, Proper Callout Must Be Shown (Directory)
+1.68	Group Callout on Contact Within
+1.69	Swap Displays Button Should Always Be Present Regardless of BLF Status
+1.70	Swap Display Button Should Disappear for 1 Tx/1 Rx and 2 Tx Profiles
+1.71	Both Audio and Video Are Swapped When Swap Display Button Clicked
+1.72	Swap Displays Button Should Work Only on the Output Device
+1.73	Factory Reset Removes All Config from the Device
+1.74	After Factory Default UXP Should Go to DHCP Enabled Mode and Bridged Interface
+1.75	After Factory Default UXP, User Should Be Able to Set IP
+1.76	Able to Reach WebEasy When SM Cannot Be Reached
+1.77	Secure FTP
+1.78	If UXP Did Not Get IP from DHCP Server WebEasy Should Be Opened
+1.79	Manual Entry of SM Server Properties
+1.80	Can Start Ad-Hoc Connection from Nucleus
+1.81	Can End Ad-Hoc Connection from Nucleus
+1.82	Ad-Hoc Connection Makes Both Device Statuses Red in GUI
+1.83	Video Present with Ad-Hoc Connection
+1.84	Swap when profile is missing audio or video configuration
+1.85	After swap new values should persist over reboots
+1.86	Ad-Hoc Connection with Device That Has Auto-Answer Enabled
+1.87	Ad-Hoc Connection with Device That Has Auto-Answer Disabled
+1.88	Can Start Permanent Connection from Nucleus
+1.89	Can End Permanent Connection from Nucleus
+1.90	Permanent Connection Disables Interaction with Favourites
+1.91	Permanent Connection Popup Appears in GUI
+1.92	Permanent Connection with Device That Has Auto-Answer Enabled
+1.93	Permanent Connection with Device That Has Auto-Answer Disabled
+1.94	Permanent Connection Persists After Restart
+1.95	Room Control Button Opens Room Control
+1.96	Room Control Camera Icon Appears If Camera Configured
+1.97	Test Each Camera Control
+1.98	If Chime Is Disabled, There Should Be No Tone When Connecting
+1.99	If Chime Is Enabled, One Chime Should Play When Connecting
+1.100	If Chime Is Enabled, Auto-Answer Off, There Should Be Multiple Chimes
+1.101	Landing Page
+1.102	Register retry
+1.103	Start Subscription if Registered
+1.104	Picture ID (15 MB+)
+1.105	Check Values in Device Status Popup
+1.106	Modify Profile Using WebEasy
+1.107	Disconnecting TRS from Network Makes It Show Up Greyed Out for Other Devices
+1.108	Login as User
+1.109	Kill Power to Entire System

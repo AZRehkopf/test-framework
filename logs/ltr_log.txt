@@ -1,0 +1,12 @@
+##################################### Test Begin #####################################
+
+Test beginning at 2018-06-08 12:22:36
+
+[12:22:46]: Starting connection with favourite 1. Aniticiapted duration: 48 minutes.
+[12:23:35]: Closing connection with favourite 1.
+
+Test ended at 2018-06-08 12:23:35
+Total conenctions: 1
+
+#####################################  Test End  #####################################
+

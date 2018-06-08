@@ -1,6 +1,7 @@
 import sys, os, datetime
 dir_path = os.path.dirname(os.path.realpath(__file__))
 sys.path.append(dir_path)
+dir_path = dir_path[:len(dir_path) - 4]
 from selenium import webdriver
 from time import sleep
 from random import randint as rand
@@ -15,7 +16,7 @@ def startup():
 	sleep(5)
 	favourites = uxp.getFavourites()
 	start = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-	with open("ltr_log.txt", "w") as log:
+	with open(os.path.join(dir_path,"logs\\ltr_log.txt"), "w") as log:
 		log.write("##################################### Test Begin #####################################\n\n")
 		log.write("Test beginning at " + start + "\n\n")
 
@@ -31,7 +32,7 @@ def log(fav, delay, status):
 		end = ".\n"
 		connections += 1
 	message = time + init + "connection with favourite " + str(fav) + end
-	with open("ltr_log.txt", "a") as log:
+	with open(os.path.join(dir_path,"logs\\ltr_log.txt"), "a") as log:
 		log.write(message)
 
 def runtime():
@@ -50,7 +51,7 @@ def runtime():
 
 def shutdown():
 	end = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-	with open("ltr_log.txt", "a") as log:
+	with open(os.path.join(dir_path,"logs\\ltr_log.txt"), "a") as log:
 		log.write("\nTest ended at " + end + "\n")
 		log.write("Total conenctions: " + str(connections) + "\n\n")
 		log.write("#####################################  Test End  #####################################\n\n")
