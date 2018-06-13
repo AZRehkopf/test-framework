@@ -28,7 +28,7 @@ def startSession():
 
 	elem = driver.find_element_by_id("password")
 	elem.clear()
-	elem.send_keys("PV1nucleus")
+	elem.send_keys("#PV1nuc1eou$")
 	elem.send_keys(Keys.RETURN)
 	sleep(2)
 

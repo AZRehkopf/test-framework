@@ -1,12 +1,210 @@
 ##################################### Test Begin #####################################
 
-Test beginning at 2018-06-08 12:22:36
+Test beginning at 2018-06-13 09:45:11
 
-[12:22:46]: Starting connection with favourite 1. Aniticiapted duration: 48 minutes.
-[12:23:35]: Closing connection with favourite 1.
-
-Test ended at 2018-06-08 12:23:35
-Total conenctions: 1
-
-#####################################  Test End  #####################################
-
+[09:45:22]: Starting connection with favourite 2. Aniticiapted duration: 12 seconds.
+[09:45:35]: Closing connection with favourite 2.
+[09:45:45]: Starting connection with favourite 5. Aniticiapted duration: 18 seconds.
+[09:46:05]: Closing connection with favourite 5.
+[09:46:15]: Starting connection with favourite 3. Aniticiapted duration: 64 seconds.
+[09:47:20]: Closing connection with favourite 3.
+[09:47:31]: Starting connection with favourite 4. Aniticiapted duration: 2 seconds.
+[09:47:34]: Closing connection with favourite 4.
+[09:47:45]: Starting connection with favourite 4. Aniticiapted duration: 118 seconds.
+[09:49:54]: Closing connection with favourite 4.
+[09:50:09]: Starting connection with favourite 0. Aniticiapted duration: 92 seconds.
+[09:51:52]: Closing connection with favourite 0.
+[09:52:08]: Starting connection with favourite 4. Aniticiapted duration: 78 seconds.
+[09:53:37]: Closing connection with favourite 4.
+[09:53:53]: Starting connection with favourite 4. Aniticiapted duration: 106 seconds.
+[09:55:50]: Closing connection with favourite 4.
+[09:56:05]: Starting connection with favourite 4. Aniticiapted duration: 100 seconds.
+[09:57:57]: Closing connection with favourite 4.
+[09:58:12]: Starting connection with favourite 1. Aniticiapted duration: 15 seconds.
+[09:58:38]: Closing connection with favourite 1.
+[09:58:54]: Starting connection with favourite 4. Aniticiapted duration: 2 seconds.
+[09:59:07]: Closing connection with favourite 4.
+[09:59:23]: Starting connection with favourite 5. Aniticiapted duration: 87 seconds.
+[10:01:01]: Closing connection with favourite 5.
+[10:01:16]: Starting connection with favourite 1. Aniticiapted duration: 8 seconds.
+[10:01:35]: Closing connection with favourite 1.
+[10:01:51]: Starting connection with favourite 1. Aniticiapted duration: 107 seconds.
+[10:03:49]: Closing connection with favourite 1.
+[10:04:05]: Starting connection with favourite 5. Aniticiapted duration: 113 seconds.
+[10:06:09]: Closing connection with favourite 5.
+[10:06:24]: Starting connection with favourite 4. Aniticiapted duration: 6 seconds.
+[10:06:42]: Closing connection with favourite 4.
+[10:06:57]: Starting connection with favourite 4. Aniticiapted duration: 17 seconds.
+[10:07:25]: Closing connection with favourite 4.
+[10:07:41]: Starting connection with favourite 0. Aniticiapted duration: 59 seconds.
+[10:08:51]: Closing connection with favourite 0.
+[10:09:07]: Starting connection with favourite 0. Aniticiapted duration: 72 seconds.
+[10:10:30]: Closing connection with favourite 0.
+[10:10:45]: Starting connection with favourite 4. Aniticiapted duration: 66 seconds.
+[10:12:02]: Closing connection with favourite 4.
+[10:12:18]: Starting connection with favourite 2. Aniticiapted duration: 7 seconds.
+[10:12:36]: Closing connection with favourite 2.
+[10:12:52]: Starting connection with favourite 2. Aniticiapted duration: 85 seconds.
+[10:14:28]: Closing connection with favourite 2.
+[10:14:43]: Starting connection with favourite 0. Aniticiapted duration: 73 seconds.
+[10:16:08]: Closing connection with favourite 0.
+[10:16:23]: Starting connection with favourite 0. Aniticiapted duration: 82 seconds.
+[10:17:56]: Closing connection with favourite 0.
+[10:18:12]: Starting connection with favourite 4. Aniticiapted duration: 38 seconds.
+[10:19:01]: Closing connection with favourite 4.
+[10:19:16]: Starting connection with favourite 4. Aniticiapted duration: 46 seconds.
+[10:20:14]: Closing connection with favourite 4.
+[10:20:29]: Starting connection with favourite 4. Aniticiapted duration: 4 seconds.
+[10:20:44]: Closing connection with favourite 4.
+[10:21:00]: Starting connection with favourite 0. Aniticiapted duration: 109 seconds.
+[10:23:00]: Closing connection with favourite 0.
+[10:23:16]: Starting connection with favourite 3. Aniticiapted duration: 68 seconds.
+[10:24:35]: Closing connection with favourite 3.
+[10:24:50]: Starting connection with favourite 4. Aniticiapted duration: 118 seconds.
+[10:26:59]: Closing connection with favourite 4.
+[10:27:15]: Starting connection with favourite 0. Aniticiapted duration: 73 seconds.
+[10:28:39]: Closing connection with favourite 0.
+[10:28:55]: Starting connection with favourite 3. Aniticiapted duration: 13 seconds.
+[10:29:19]: Closing connection with favourite 3.
+[10:29:34]: Starting connection with favourite 1. Aniticiapted duration: 119 seconds.
+[10:31:45]: Closing connection with favourite 1.
+[10:32:00]: Starting connection with favourite 5. Aniticiapted duration: 111 seconds.
+[10:34:02]: Closing connection with favourite 5.
+[10:34:18]: Starting connection with favourite 1. Aniticiapted duration: 91 seconds.
+[10:36:00]: Closing connection with favourite 1.
+[10:36:15]: Starting connection with favourite 2. Aniticiapted duration: 31 seconds.
+[10:36:58]: Closing connection with favourite 2.
+[10:37:13]: Starting connection with favourite 2. Aniticiapted duration: 1 seconds.
+[10:37:25]: Closing connection with favourite 2.
+[10:37:41]: Starting connection with favourite 0. Aniticiapted duration: 42 seconds.
+[10:38:34]: Closing connection with favourite 0.
+[10:38:50]: Starting connection with favourite 2. Aniticiapted duration: 102 seconds.
+[10:40:43]: Closing connection with favourite 2.
+[10:40:58]: Starting connection with favourite 0. Aniticiapted duration: 43 seconds.
+[10:41:52]: Closing connection with favourite 0.
+[10:42:08]: Starting connection with favourite 0. Aniticiapted duration: 99 seconds.
+[10:43:58]: Closing connection with favourite 0.
+[10:44:14]: Starting connection with favourite 1. Aniticiapted duration: 78 seconds.
+[10:45:43]: Closing connection with favourite 1.
+[10:45:58]: Starting connection with favourite 5. Aniticiapted duration: 108 seconds.
+[10:47:58]: Closing connection with favourite 5.
+[10:48:13]: Starting connection with favourite 3. Aniticiapted duration: 15 seconds.
+[10:48:39]: Closing connection with favourite 3.
+[10:48:55]: Starting connection with favourite 5. Aniticiapted duration: 57 seconds.
+[10:50:03]: Closing connection with favourite 5.
+[10:50:19]: Starting connection with favourite 4. Aniticiapted duration: 29 seconds.
+[10:50:59]: Closing connection with favourite 4.
+[10:51:14]: Starting connection with favourite 5. Aniticiapted duration: 3 seconds.
+[10:51:28]: Closing connection with favourite 5.
+[10:51:44]: Starting connection with favourite 3. Aniticiapted duration: 111 seconds.
+[10:53:46]: Closing connection with favourite 3.
+[10:54:02]: Starting connection with favourite 2. Aniticiapted duration: 76 seconds.
+[10:55:29]: Closing connection with favourite 2.
+[10:55:44]: Starting connection with favourite 1. Aniticiapted duration: 50 seconds.
+[10:56:46]: Closing connection with favourite 1.
+[10:57:01]: Starting connection with favourite 0. Aniticiapted duration: 42 seconds.
+[10:57:54]: Closing connection with favourite 0.
+[10:58:10]: Starting connection with favourite 0. Aniticiapted duration: 25 seconds.
+[10:58:46]: Closing connection with favourite 0.
+[10:59:01]: Starting connection with favourite 0. Aniticiapted duration: 85 seconds.
+[11:00:38]: Closing connection with favourite 0.
+[11:00:53]: Starting connection with favourite 3. Aniticiapted duration: 73 seconds.
+[11:02:17]: Closing connection with favourite 3.
+[11:02:33]: Starting connection with favourite 0. Aniticiapted duration: 72 seconds.
+[11:03:56]: Closing connection with favourite 0.
+[11:04:12]: Starting connection with favourite 4. Aniticiapted duration: 8 seconds.
+[11:04:31]: Closing connection with favourite 4.
+[11:04:46]: Starting connection with favourite 2. Aniticiapted duration: 55 seconds.
+[11:05:52]: Closing connection with favourite 2.
+[11:06:08]: Starting connection with favourite 4. Aniticiapted duration: 66 seconds.
+[11:07:25]: Closing connection with favourite 4.
+[11:07:41]: Starting connection with favourite 4. Aniticiapted duration: 67 seconds.
+[11:08:59]: Closing connection with favourite 4.
+[11:09:15]: Starting connection with favourite 5. Aniticiapted duration: 88 seconds.
+[11:10:54]: Closing connection with favourite 5.
+[11:11:09]: Starting connection with favourite 1. Aniticiapted duration: 55 seconds.
+[11:12:15]: Closing connection with favourite 1.
+[11:12:31]: Starting connection with favourite 5. Aniticiapted duration: 31 seconds.
+[11:13:13]: Closing connection with favourite 5.
+[11:13:29]: Starting connection with favourite 5. Aniticiapted duration: 66 seconds.
+[11:14:46]: Closing connection with favourite 5.
+[11:15:01]: Starting connection with favourite 3. Aniticiapted duration: 26 seconds.
+[11:15:38]: Closing connection with favourite 3.
+[11:15:54]: Starting connection with favourite 2. Aniticiapted duration: 110 seconds.
+[11:17:55]: Closing connection with favourite 2.
+[11:18:11]: Starting connection with favourite 2. Aniticiapted duration: 13 seconds.
+[11:18:35]: Closing connection with favourite 2.
+[11:18:50]: Starting connection with favourite 2. Aniticiapted duration: 8 seconds.
+[11:19:10]: Closing connection with favourite 2.
+[11:19:25]: Starting connection with favourite 5. Aniticiapted duration: 60 seconds.
+[11:20:36]: Closing connection with favourite 5.
+[11:20:52]: Starting connection with favourite 3. Aniticiapted duration: 89 seconds.
+[11:22:32]: Closing connection with favourite 3.
+[11:22:48]: Starting connection with favourite 3. Aniticiapted duration: 31 seconds.
+[11:23:30]: Closing connection with favourite 3.
+[11:23:45]: Starting connection with favourite 3. Aniticiapted duration: 3 seconds.
+[11:23:59]: Closing connection with favourite 3.
+[11:24:15]: Starting connection with favourite 2. Aniticiapted duration: 81 seconds.
+[11:25:47]: Closing connection with favourite 2.
+[11:26:03]: Starting connection with favourite 1. Aniticiapted duration: 16 seconds.
+[11:26:30]: Closing connection with favourite 1.
+[11:26:45]: Starting connection with favourite 1. Aniticiapted duration: 36 seconds.
+[11:27:33]: Closing connection with favourite 1.
+[11:27:48]: Starting connection with favourite 2. Aniticiapted duration: 5 seconds.
+[11:28:04]: Closing connection with favourite 2.
+[11:28:20]: Starting connection with favourite 0. Aniticiapted duration: 40 seconds.
+[11:29:11]: Closing connection with favourite 0.
+[11:29:27]: Starting connection with favourite 5. Aniticiapted duration: 45 seconds.
+[11:30:23]: Closing connection with favourite 5.
+[11:30:38]: Starting connection with favourite 0. Aniticiapted duration: 54 seconds.
+[11:31:43]: Closing connection with favourite 0.
+[11:31:59]: Starting connection with favourite 4. Aniticiapted duration: 107 seconds.
+[11:33:57]: Closing connection with favourite 4.
+[11:34:13]: Starting connection with favourite 0. Aniticiapted duration: 30 seconds.
+[11:34:54]: Closing connection with favourite 0.
+[11:35:09]: Starting connection with favourite 1. Aniticiapted duration: 23 seconds.
+[11:35:44]: Closing connection with favourite 1.
+[11:35:59]: Starting connection with favourite 3. Aniticiapted duration: 93 seconds.
+[11:37:43]: Closing connection with favourite 3.
+[11:37:59]: Starting connection with favourite 5. Aniticiapted duration: 20 seconds.
+[11:38:30]: Closing connection with favourite 5.
+[11:38:46]: Starting connection with favourite 2. Aniticiapted duration: 102 seconds.
+[11:40:39]: Closing connection with favourite 2.
+[11:40:54]: Starting connection with favourite 1. Aniticiapted duration: 76 seconds.
+[11:42:21]: Closing connection with favourite 1.
+[11:42:37]: Starting connection with favourite 3. Aniticiapted duration: 80 seconds.
+[11:44:08]: Closing connection with favourite 3.
+[11:44:24]: Starting connection with favourite 5. Aniticiapted duration: 69 seconds.
+[11:45:44]: Closing connection with favourite 5.
+[11:45:59]: Starting connection with favourite 3. Aniticiapted duration: 13 seconds.
+[11:46:24]: Closing connection with favourite 3.
+[11:46:39]: Starting connection with favourite 2. Aniticiapted duration: 30 seconds.
+[11:47:20]: Closing connection with favourite 2.
+[11:47:36]: Starting connection with favourite 1. Aniticiapted duration: 91 seconds.
+[11:49:18]: Closing connection with favourite 1.
+[11:49:34]: Starting connection with favourite 1. Aniticiapted duration: 112 seconds.
+[11:51:37]: Closing connection with favourite 1.
+[11:51:52]: Starting connection with favourite 1. Aniticiapted duration: 95 seconds.
+[11:53:38]: Closing connection with favourite 1.
+[11:53:54]: Starting connection with favourite 3. Aniticiapted duration: 3 seconds.
+[11:54:08]: Closing connection with favourite 3.
+[11:54:24]: Starting connection with favourite 5. Aniticiapted duration: 104 seconds.
+[11:56:19]: Closing connection with favourite 5.
+[11:56:34]: Starting connection with favourite 3. Aniticiapted duration: 20 seconds.
+[11:57:06]: Closing connection with favourite 3.
+[11:57:21]: Starting connection with favourite 4. Aniticiapted duration: 114 seconds.
+[11:59:26]: Closing connection with favourite 4.
+[11:59:42]: Starting connection with favourite 0. Aniticiapted duration: 47 seconds.
+[12:00:40]: Closing connection with favourite 0.
+[12:00:56]: Starting connection with favourite 1. Aniticiapted duration: 117 seconds.
+[12:03:07]: Closing connection with favourite 1.
+[12:03:22]: Starting connection with favourite 1. Aniticiapted duration: 14 seconds.
+[12:03:48]: Closing connection with favourite 1.
+[12:04:03]: Starting connection with favourite 1. Aniticiapted duration: 110 seconds.
+[12:06:04]: Closing connection with favourite 1.
+[12:06:20]: Starting connection with favourite 1. Aniticiapted duration: 113 seconds.
+[12:08:24]: Closing connection with favourite 1.
+[12:08:39]: Starting connection with favourite 5. Aniticiapted duration: 76 seconds.
+[12:10:07]: Closing connection with favourite 5.
+[12:10:22]: Starting connection with favourite 2. Aniticiapted duration: 45 seconds.
+[12:11:17]: Connection with favourite 2 failed.

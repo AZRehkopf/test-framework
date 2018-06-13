@@ -536,10 +536,10 @@ def zoomOutFast(delay):
 def selectPreset(preset):
 	element = {
 		1: "local-preset-btn-one",
-		2: "local-preset-button-two",
-		3: "local-preset-button-three",
-		4: "local-preset-button-four",
-		5: "local-preset-button-five"
+		2: "local-preset-btn-two",
+		3: "local-preset-btn-three",
+		4: "local-preset-btn-four",
+		5: "local-preset-btn-five"
 	}[preset]
 
 	wait = WebDriverWait(driver, 10)

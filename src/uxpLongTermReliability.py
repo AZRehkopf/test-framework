@@ -5,6 +5,7 @@ dir_path = dir_path[:len(dir_path) - 4]
 from selenium import webdriver
 from time import sleep
 from random import randint as rand
+from selenium.common.exceptions import TimeoutException
 import uxpTestFramework as uxp
 
 def startup():
@@ -24,14 +25,20 @@ def log(fav, delay, status):
 	global connections
 	time = datetime.datetime.now().strftime("[%H:%M:%S]: ")
 	init = ""
-	if status:
+	
+	if status is "open":
 		init = "Starting "
-		end = ". Aniticiapted duration: " + str(delay) + " minutes.\n"
-	else:
+		end = ". Aniticiapted duration: " + str(delay) + " seconds.\n"
+	elif status is "close":
 		init = "Closing "
 		end = ".\n"
 		connections += 1
-	message = time + init + "connection with favourite " + str(fav) + end
+	elif status is "error":
+		message = time + "Connection with favourite " + str(fav) + " failed.\n"
+
+	if status is not "error":	
+		message = time + init + "connection with favourite " + str(fav) + end
+	
 	with open(os.path.join(dir_path,"logs\\ltr_log.txt"), "a") as log:
 		log.write(message)
 
@@ -39,14 +46,22 @@ def runtime():
 	time_expired = False
 	while not time_expired:
 		sleep(10)
-		fav = rand(0,4)
-		time = rand(1,61)
-		log(fav,time,True)
-		uxp.startSession(favourites[fav])
+		fav = rand(0,len(favourites) - 1)
+		time = rand(1,120)
+		
+		try: 
+			uxp.startSession(favourites[fav])
+			log(fav,time,"open")
+		except TimeoutException: log(fav,time,"error")
+		
 		sleep(time)
-		uxp.endSession()
-		log(fav,time,False)
-		if (datetime.datetime.now() > datetime.datetime(2018,6,5,16,35,0)):
+		
+		try: 
+			uxp.endSession()
+			log(fav,time,"close")
+		except TimeoutException: log(fav,time,"error")
+		
+		if (datetime.datetime.now() > datetime.datetime(2018,6,14,8,0,0)):
 			time_expired = True
 
 def shutdown():

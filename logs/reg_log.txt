@@ -1,39 +1,41 @@
 ##################################### Test Begin #####################################
 
-Regression beginning at 2018-06-08 14:12:22
+Regression beginning at 2018-06-13 15:49:40
 
-[14:12:38]: Running sm_version_test ... OK
-[14:12:52]: Running connection_test ... OK
-[14:12:53]: Running login_test ... OK
-[14:12:58]: Running endpoint_directory_test ... OK
-[14:13:02]: Running add_favourites_test ... OK
-[14:13:07]: Running remove_favourites_test ... OK
-[14:13:35]: Running initiate_session_test_auto_anwser_on ... OK
-[14:14:03]: Running initiate_session_test_auto_anwser_off ... OK
-[14:14:33]: Running reject_session_test ... OK
-[14:14:48]: Running change_profiles_while_idle_test ... OK
-[14:15:05]: Running change_profiles_while_in_session_test ... OK
-[14:15:20]: Running device_picture_test ... OK
-[14:15:38]: Running mute_test ... OK
-[14:17:48]: Running reboot_test ... OK
-[14:20:17]: Running sm_reboot_test ... OK
-[14:20:33]: Running we_logout_test ... OK
-[14:20:43]: Running profile_reload_test ... OK
-[14:20:45]: Running profile_category_test ... OK
-[14:20:49]: Running create_group_test ... OK
-[14:20:50]: Running add_fav_to_group_test ... OK
-[14:20:51]: Running remove_group_test ... OK
-[14:20:56]: Running add_temp_fav_to_group_test ... OK
-[14:21:04]: Running remove_fav_from_group ... OK
-[14:21:04]: Running edit_label_test ... OK
-[14:21:06]: Running large_label_test ... OK
-[14:21:08]: Running clear_label_test ... OK
-[14:21:09]: Running multiple_label_spaces_test ... OK
-[14:21:20]: Running label_switch_test ... OK
-[14:21:27]: Running search_results_test ... OK
-[14:21:52]: Running group_session_test ... OK
+[15:49:56]: Running sm_version_test ... OK
+[15:50:11]: Running connection_test ... OK
+[15:50:12]: Running login_test ... OK
+[15:50:17]: Running endpoint_directory_test ... OK
+[15:50:22]: Running add_favourites_test ... OK
+[15:50:27]: Running remove_favourites_test ... OK
+[15:50:54]: Running initiate_session_test_auto_anwser_on ... OK
+[15:51:22]: Running initiate_session_test_auto_anwser_off ... OK
+[15:51:52]: Running reject_session_test ... OK
+[15:52:07]: Running change_profiles_while_idle_test ... OK
+[15:52:24]: Running change_profiles_while_in_session_test ... OK
+[15:52:42]: Running device_picture_test ... OK
+[15:53:01]: Running mute_test ... OK
+[15:55:11]: Running reboot_test ... OK
+[15:57:37]: Running sm_reboot_test ... OK
+[15:57:53]: Running we_logout_test ... OK
+[15:58:03]: Running profile_reload_test ... OK
+[15:58:05]: Running profile_category_test ... OK
+[15:58:09]: Running create_group_test ... OK
+[15:58:10]: Running add_fav_to_group_test ... OK
+[15:58:11]: Running remove_group_test ... OK
+[15:58:16]: Running add_temp_fav_to_group_test ... OK
+[15:58:24]: Running remove_fav_from_group ... OK
+[15:58:24]: Running edit_label_test ... OK
+[15:58:26]: Running large_label_test ... OK
+[15:58:28]: Running clear_label_test ... OK
+[15:58:29]: Running multiple_label_spaces_test ... OK
+[15:58:40]: Running label_switch_test ... OK
+[15:58:47]: Running search_results_test ... OK
+[15:59:12]: Running group_session_test ... OK
+[15:59:56]: Running reject_group_session_test ... OK
+[16:01:17]: Running camera_test ... OK
 
-Regression ended at 2018-06-08 14:21:52
+Regression ended at 2018-06-13 16:01:17
 
 #####################################  Test End  #####################################
 

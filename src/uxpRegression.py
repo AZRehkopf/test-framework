@@ -445,6 +445,205 @@ def group_session_test():
 	sleep(1)
 	log(group_session_test.__name__, result)
 
+#Add Assestions
+def reject_group_session_test():
+	caller = uxp.getCurrentDeviceName()
+	caller_ip = devices[sm.findDevice(devices, caller)].ip
+	callee = uxp.getFavouriteNames()
+	callee_ip = devices[sm.findDevice(devices, callee[0])].ip
+	
+	uxp.connect(callee_ip)
+	#uxp.login() #REMOVE THIS FOR REGRESSION
+	uxp.openOptions()
+	uxp.toggleAutoAccept()
+	uxp.saveOptions()
+	
+	uxp.connect(caller_ip)
+	sleep(10)
+	
+	uxp.createGroup()
+	favs = uxp.getFavourites()
+	for f in favs: uxp.addToGroup(f,"group-div-1")
+	uxp.startSession(uxp.getGroups()[0])
+	
+	uxp.connect(callee_ip)
+	uxp.rejectSession()
+	uxp.openOptions()
+	uxp.toggleAutoAccept()
+	uxp.saveOptions()
+	uxp.connect(caller_ip)
+	sleep(10)
+	uxp.endGroupSession()
+	uxp.removeGroup("group-div-1")
+	log(reject_group_session_test.__name__, True)
+
+def leave_group_session_test():
+	caller = uxp.getCurrentDeviceName()
+	caller_ip = devices[sm.findDevice(devices, caller)].ip
+	callee = uxp.getFavouriteNames()
+	callee_ip = devices[sm.findDevice(devices, callee[0])].ip
+	
+	uxp.createGroup()
+	favs = uxp.getFavourites()
+	for f in favs: uxp.addToGroup(f,"group-div-1")
+	uxp.startSession(uxp.getGroups()[0])
+	
+	uxp.connect(callee_ip)
+	#uxp.login() #REMOVE THIS FOR REGRESSION
+	uxp.endSession()
+	
+	uxp.connect(caller_ip)
+	sleep(10)
+	uxp.endGroupSession()
+	uxp.removeGroup("group-div-1")
+	log(reject_group_session_test.__name__, True)
+
+def camera_test():
+	uxp.openRoomControl()
+	uxp.openCameraControls("local-camera0")
+	
+	uxp.moveCameraRight(3)
+	uxp.moveCameraLeft(3)
+	uxp.moveCameraUp(3)
+	uxp.moveCameraDown(3)
+
+	uxp.togglePrecision()
+
+	uxp.moveCameraRight(3)
+	uxp.moveCameraLeft(3)
+	uxp.moveCameraUp(3)
+	uxp.moveCameraDown(3)
+
+	uxp.togglePrecision()
+	uxp.toggleReverse()
+
+	uxp.moveCameraRight(3)
+	uxp.moveCameraLeft(3)
+
+	uxp.toggleReverse()
+	
+	uxp.zoomInSlow(3)
+	uxp.zoomOutSlow(3)
+	uxp.zoomInFast(1)
+	uxp.zoomOutFast(1)
+
+	uxp.selectPreset(1)
+	uxp.selectPreset(2)
+	uxp.selectPreset(3)
+	uxp.selectPreset(4)
+	uxp.selectPreset(5)
+
+	uxp.toggleRemoteControl()
+	sleep(1)
+	uxp.toggleRemoteControl()
+	
+	uxp.toggleMirror()
+	sleep(1)
+	uxp.toggleMirror()
+
+	uxp.manualNearFocus(3)
+	uxp.manualFarFocus(3)
+	uxp.toggleAutoFocus()
+
+	uxp.closeCameraControl()
+	log(camera_test.__name__, True)
+
+def remote_camera_test():
+	uxp.openCameraControls("local-camera0")
+	
+	uxp.moveCameraRight(3)
+	uxp.moveCameraLeft(3)
+	uxp.moveCameraUp(3)
+	uxp.moveCameraDown(3)
+
+	uxp.togglePrecision()
+
+	uxp.moveCameraRight(3)
+	uxp.moveCameraLeft(3)
+	uxp.moveCameraUp(3)
+	uxp.moveCameraDown(3)
+
+	uxp.togglePrecision()
+	uxp.toggleReverse()
+
+	uxp.moveCameraRight(3)
+	uxp.moveCameraLeft(3)
+
+	uxp.toggleReverse()
+	
+	uxp.zoomInSlow(3)
+	uxp.zoomOutSlow(3)
+	uxp.zoomInFast(1)
+	uxp.zoomOutFast(1)
+
+	uxp.selectPreset(1)
+	uxp.selectPreset(2)
+	uxp.selectPreset(3)
+	uxp.selectPreset(4)
+	uxp.selectPreset(5)
+
+	uxp.toggleRemoteControl()
+	sleep(1)
+	uxp.toggleRemoteControl()
+	
+	uxp.toggleMirror()
+	sleep(1)
+	uxp.toggleMirror()
+
+	uxp.manualNearFocus(3)
+	uxp.manualFarFocus(3)
+	uxp.toggleAutoFocus()
+
+	uxp.closeCameraControl()
+
+def camera_during_group_session_test():
+	uxp.openCameraControls("local-camera0")
+	
+	uxp.moveCameraRight(3)
+	uxp.moveCameraLeft(3)
+	uxp.moveCameraUp(3)
+	uxp.moveCameraDown(3)
+
+	uxp.togglePrecision()
+
+	uxp.moveCameraRight(3)
+	uxp.moveCameraLeft(3)
+	uxp.moveCameraUp(3)
+	uxp.moveCameraDown(3)
+
+	uxp.togglePrecision()
+	uxp.toggleReverse()
+
+	uxp.moveCameraRight(3)
+	uxp.moveCameraLeft(3)
+
+	uxp.toggleReverse()
+	
+	uxp.zoomInSlow(3)
+	uxp.zoomOutSlow(3)
+	uxp.zoomInFast(1)
+	uxp.zoomOutFast(1)
+
+	uxp.selectPreset(1)
+	uxp.selectPreset(2)
+	uxp.selectPreset(3)
+	uxp.selectPreset(4)
+	uxp.selectPreset(5)
+
+	uxp.toggleRemoteControl()
+	sleep(1)
+	uxp.toggleRemoteControl()
+	
+	uxp.toggleMirror()
+	sleep(1)
+	uxp.toggleMirror()
+
+	uxp.manualNearFocus(3)
+	uxp.manualFarFocus(3)
+	uxp.toggleAutoFocus()
+
+	uxp.closeCameraControl()
+	
 ####################################
 #            Tests Plans           #
 ####################################
@@ -482,6 +681,8 @@ def full_regression():
 	label_switch_test()
 	search_results_test()
 	group_session_test()
+	reject_group_session_test()
+	camera_test()
 	stop_logging()
 
 ####################################
